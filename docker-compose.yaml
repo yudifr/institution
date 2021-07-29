@@ -1,0 +1,18 @@
+version: '3.8'
+services: 
+  institution:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 8000:8000
+    depends_on:
+      - dbpg
+  dbpg:
+    image: postgres:13-alpine
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ako
+      POSTGRES_DB: institution
+    ports: 
+      - 5434:5432

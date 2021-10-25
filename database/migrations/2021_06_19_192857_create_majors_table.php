@@ -15,10 +15,10 @@ class CreateMajorsTable extends Migration
     {
         Schema::create('majors', function (Blueprint $table) {
             $table->id();
-            $table->string('id_institusi');
-            $table->string('id_fakultas');
-            $table->string('nama_prodi');
-            $table->string('email_prodi');
+            $table->string('id_institusi')->nullable();
+            $table->string('id_fakultas')->nullable();
+            $table->string('nama_prodi')->nullable();
+            $table->string('email_prodi')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

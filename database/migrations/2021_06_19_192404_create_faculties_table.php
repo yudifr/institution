@@ -15,9 +15,9 @@ class CreateFacultiesTable extends Migration
     {
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
-            $table->string('id_institusi');
-            $table->string('nama_fakultas');
-            $table->string('email_fakultas');
+            $table->string('id_institusi')->nullable();
+            $table->string('nama_fakultas')->nullable();
+            $table->string('email_fakultas')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

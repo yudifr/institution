@@ -20,7 +20,8 @@ $router->group(['prefix' => 'institution','middleware'=>"access"], function () u
     $router->get('/', ['as'=>'institution','uses' =>'InstitutionController@getInstitution']);
     $router->get('/{id}', ['as'=>'institution-id','uses' =>'InstitutionController@getInstitutionId']);
     $router->post('/', ['as'=>'new-institution','uses' =>'InstitutionController@newInstitution']);
+    $router->post('/fakultas', ['as'=>'new-faculty','uses' =>'InstitutionController@newFaculty']);
+    $router->post('/fakultas/jurusan', ['as'=>'new-major','uses' =>'InstitutionController@newMajor']);
     $router->put('/{id}', ['as'=>'update-institution','uses' =>'InstitutionController@updateInstitution']);
-    $router->delete('/{id}', ['as'=>'delete-institution','uses' =>'InstitutionController@deleteInstitution']);
 
 });

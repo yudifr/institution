@@ -14,13 +14,13 @@ class CreateInstitutionsTable extends Migration
     public function up()
     {
         Schema::create('institutions', function (Blueprint $table) {
-            $table->string('kode_sekolah')->primary();
-            $table->string('nama');
-            $table->string('tipe');
-            $table->string('alamat');
-            $table->string('kab_kota'); 
-            $table->string('provinsi');
-            $table->string('email')->nullable();
+            $table->id();
+            $table->string('kode_sekolah')->nullable();
+            $table->string('nama')->unique()->nullable();
+            $table->string('tipe')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('kab_kota')->nullable(); 
+            $table->string('provinsi')->nullable();
             $table->string('no_telp')->nullable();
             $table->timestamps();
             $table->softDeletes();

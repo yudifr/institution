@@ -21,7 +21,7 @@ class Institution extends Model implements AuthenticatableContract, Authorizable
      * @var array
      */
     protected $fillable = [
-        'kode_sekolah','nama','tipe','email','alamat','kab_kota','provinsi','no_telp'
+        'kode_sekolah','nama','tipe','alamat','kab_kota','provinsi','no_telp'
     ];
 
     /**
@@ -34,11 +34,10 @@ class Institution extends Model implements AuthenticatableContract, Authorizable
     ];
     protected $appends = ['major_data','faculty_data'];
 
-    protected $primaryKey = 'kode_sekolah';
     public function getMajorDataAttribute(){
-        return Major::where('id_institusi',$this->kode_sekolah)->get();
+        return Major::where('id_institusi',$this->id)->get();
     }
     public function getFacultyDataAttribute(){
-        return Faculty::where('id_institusi',$this->kode_sekolah)->get();
+        return Faculty::where('id_institusi',$this->id)->get();
     }
 }

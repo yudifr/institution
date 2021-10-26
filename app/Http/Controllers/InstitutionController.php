@@ -91,14 +91,14 @@ class InstitutionController extends BaseController
         try {
 
             $data = DB::select(
-                "insert into majors (id_institusi,id_fakultas,nama_jurusan,email_jurusan)
-                    values(:id_institusi,:id_fakultas,:nama_jurusan,:email_jurusan) returning id
+                "insert into majors (id_institusi,id_fakultas,nama_prodi,email_prodi)
+                    values(:id_institusi,:id_fakultas,:nama_prodi,:email_prodi) returning id
                     ",
                 [
                     'id_institusi' => $request->id_institusi,
                     'id_fakultas' => $request->id_fakultas,
-                    'nama_jurusan' => $request->nama_jurusan,
-                    'email_jurusan' => $request->email_jurusan,
+                    'nama_prodi' => $request->nama_prodi,
+                    'email_prodi' => $request->email_prodi,
                 ]
             );
 
